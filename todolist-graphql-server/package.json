@@ -1,0 +1,22 @@
+{
+  "name": "todolist-graphql-server",
+  "version": "1.0.0",
+  "description": "A simple GraphQL server which consumes a Todo List rest API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GraphQL",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "Julio Sampaio <juliodssampaio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^1.2.0",
+    "express": "^4.16.2",
+    "graphql": "^0.11.7",
+    "graphql-tools": "^2.8.0"
+  }
+}

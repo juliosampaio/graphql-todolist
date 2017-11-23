@@ -1,0 +1,16 @@
+{
+  "name": "todolist-rest-server",
+  "version": "1.0.0",
+  "description": "A mock server representing a todo-list using json-server",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "keywords": [
+    "rest",
+    "json-server",
+    "api"
+  ],
+  "author": "Julio Sampaio <juliodssampaio@gmail.com>",
+  "license": "MIT"
+}
