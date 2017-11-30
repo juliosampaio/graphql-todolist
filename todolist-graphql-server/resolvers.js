@@ -22,5 +22,15 @@ module.exports = {
             });
         },
         lastName: (root) => root.last_name
+    },
+    ToDo: {
+        user: (root) => {
+            return request({
+                host: '127.0.0.1',
+                port: 3000,
+                method: 'GET',
+                path: `/users/${root.userId}`
+            });
+        }
     }
 };
