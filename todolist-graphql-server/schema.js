@@ -20,6 +20,9 @@ const schema = `
     type Query {
         findUser(id: ID!): User
     }
+    type Mutation {
+        addToDo(userID: ID!, title: String!): ToDo!
+    }
 `;
 
 module.exports = makeExecutableSchema({

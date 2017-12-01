@@ -1,9 +1,20 @@
 const http = require('http');
 
 module.exports = function httpRequest(params, postData) {
+    params = Object.assign({
+        host: '127.0.0.1',
+        port: 3000,
+    }, params);
+    if (params.method === 'POST') {
+        postData = JSON.stringify(postData);
+        params.headers = {
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(postData)
+        }
+    }
     return new Promise(function(resolve, reject) {
         const req = http.request(params, function(res) {
-            if (res.statusCode != 200) {
+            if (res.statusCode < 200 || res.statusCode >= 300) {
                 return reject(new Error('statusCode=' + res.statusCode));
             }
             let body = [];
