@@ -4,10 +4,20 @@ module.exports = {
     Query: {
         findUser: (root, data, context) => {
             return request({
-                host: '127.0.0.1',
-                port: 3000,
                 method: 'GET',
                 path: `/users/${data.id}`
+            });
+        },
+        getAllUsers: () => {
+            return request({
+                method: 'GET',
+                path: `/users/`
+            });
+        },
+        getAllToDosByUser: (root, data) => {
+            return request({
+                method: 'GET',
+                path: `/users/${data.userID}/todos`
             });
         }
     },
@@ -40,6 +50,15 @@ module.exports = {
                 method: 'POST',
                 path: `/todos/`,
             }, newTodo);
+        },
+        completeToDo: (root, data) => {
+            const toDo = {
+                completed: true,
+            };
+            return request({
+                method: 'PATCH',
+                path: `/todos/${data.id}`,
+            }, toDo);
         }
     }
 };

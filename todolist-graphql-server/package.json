@@ -4,6 +4,7 @@
   "description": "A simple GraphQL server which consumes a Todo List rest API",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server-express": "^1.2.0",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "graphql": "^0.11.7",
     "graphql-tools": "^2.8.0"

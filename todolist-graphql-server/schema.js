@@ -19,9 +19,12 @@ const schema = `
     }
     type Query {
         findUser(id: ID!): User
+        getAllUsers: [User]
+        getAllToDosByUser(userID: ID!): [ToDo]!
     }
     type Mutation {
         addToDo(userID: ID!, title: String!): ToDo!
+        completeToDo(id: ID!): ToDo
     }
 `;
 

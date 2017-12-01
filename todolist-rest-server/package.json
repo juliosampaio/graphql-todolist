@@ -4,7 +4,7 @@
   "description": "A mock server representing a todo-list using json-server",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json"
+    "start": "json-server --port 3030 --watch db.json"
   },
   "keywords": [
     "rest",

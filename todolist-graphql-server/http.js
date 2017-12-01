@@ -3,9 +3,9 @@ const http = require('http');
 module.exports = function httpRequest(params, postData) {
     params = Object.assign({
         host: '127.0.0.1',
-        port: 3000,
+        port: 3030,
     }, params);
-    if (params.method === 'POST') {
+    if (params.method === 'POST' || params.method === 'PUT' || params.method === 'PATCH') {
         postData = JSON.stringify(postData);
         params.headers = {
             'Content-Type': 'application/json',
